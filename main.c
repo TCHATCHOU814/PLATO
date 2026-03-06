@@ -5,6 +5,7 @@
 #include "tic_tac_toe.h"
 #include "sudoku.h"
 #include "regles.h"
+#include "hanoi.h"
 
 int main() {
     Player current_player;
@@ -21,10 +22,11 @@ int main() {
         printf("\n3. JOUER au TicTacToe");
         printf("\n4. JOUER au Dames");
         printf("\n5. JOUER au Sudoku");
-        printf("\n6. LIRE LES REGLES (README)");
-        printf("\n7. Voir Score");
-        printf("\n8. Se deconnecter");
-        printf("\n9. Quitter");
+        printf("\n6. JOUER a la Tour de Hanoi");
+        printf("\n7. LIRE LES REGLES (README)");
+        printf("\n8. Voir Score");
+        printf("\n9. Se deconnecter");
+        printf("\n10. Quitter");
         printf("\nChoix : ");
 
         if (scanf("%d", &choice) != 1) {
@@ -61,20 +63,22 @@ case 4:
     case 5: // Si 3 est le Sudoku
     play_sudoku(&current_player);
     break;
-
     case 6:
+    play_hanoi(&current_player);
+    break;
+    case 7:
     afficherREADME();
     break;
-                case 7:
+                case 8:
                 if (logged_in == 1) show_score(&current_player);
                 else printf("\n[!] Erreur : Connectez-vous d'abord.");
                 break;
                 // Dans ton switch(choice)
-            case 8:
+            case 9:
                 logged_in = 0;
                 logout();
                 break;
-            case 9:
+            case 10:
                 printf("\nAu revoir !\n");
                 return 0;
             default:

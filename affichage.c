@@ -468,12 +468,13 @@ void enregistrerJoeur(int typeJoeur, Joueur *joueur1, Joueur *joueur2) {
             printf("====== Enregistrement du Joueur ======\n");
             printf("Surnom: ");
             lire(joueur1->surnom, 25);
-            printf("\nNom: ");
-            lire(joueur1->nom, 25);
-            printf("\nPrenom: ");
-            lire(joueur1->prenom, 25);
-            printf("\nEmail: ");
-            lire(joueur1->email, 25);
+            printf("\n");
+            
+            // On copie le surnom dans les autres champs pour éviter qu'ils soient vides
+            strcpy(joueur1->nom, joueur1->surnom);
+            strcpy(joueur1->prenom, joueur1->surnom);
+            strcpy(joueur1->email, joueur1->surnom);
+            
             joueur1->type = HUMAIN;
             joueur1->tour = 0;
             joueur1->couleur = PION_VERT;
@@ -494,12 +495,13 @@ void enregistrerJoeur(int typeJoeur, Joueur *joueur1, Joueur *joueur2) {
             printf("====== Enregistrement du Joueur 1 ======\n");
             printf("Surnom: ");
             lire(joueur1->surnom, 25);
-            printf("\nNom: ");
-            lire(joueur1->nom, 25);
-            printf("\nPrenom: ");
-            lire(joueur1->prenom, 25);
-            printf("\nEmail: ");
-            lire(joueur1->email, 25);
+            printf("\n");
+            
+            // On copie le surnom dans les autres champs
+            strcpy(joueur1->nom, joueur1->surnom);
+            strcpy(joueur1->prenom, joueur1->surnom);
+            strcpy(joueur1->email, joueur1->surnom);
+            
             joueur1->type = HUMAIN;
             joueur1->tour = 0;
             joueur1->couleur = PION_VERT;
@@ -508,12 +510,13 @@ void enregistrerJoeur(int typeJoeur, Joueur *joueur1, Joueur *joueur2) {
             printf("====== Enregistrement du Joueur 2 ======\n");
             printf("Surnom: ");
             lire(joueur2->surnom, 25);
-            printf("\nNom: ");
-            lire(joueur2->nom, 25);
-            printf("\nPrenom: ");
-            lire(joueur2->prenom, 25);
-            printf("\nEmail: ");
-            lire(joueur2->email, 25);
+            printf("\n");
+            
+            // On copie le surnom dans les autres champs
+            strcpy(joueur2->nom, joueur2->surnom);
+            strcpy(joueur2->prenom, joueur2->surnom);
+            strcpy(joueur2->email, joueur2->surnom);
+            
             joueur2->type = HUMAIN;
             joueur2->tour = 0;
             joueur2->couleur = PION_ROUGE;

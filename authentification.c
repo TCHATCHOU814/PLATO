@@ -12,7 +12,7 @@ void register_player() {
     }
 
     Player p;
-    printf("\nEnter username: ");
+    printf("\nEnter usern1me: ");
     scanf("%49s", p.username);
     printf("Enter password: ");
     scanf("%49s", p.password);
